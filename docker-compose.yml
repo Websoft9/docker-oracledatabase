@@ -1,4 +1,5 @@
 # image: https://container-registry.oracle.com/ords/f?p=113:10::::::
+# docs: http://docs.oracle.com/en/database/
 
 version: '3.8'
 
@@ -12,12 +13,15 @@ services:
       MYSQL_USER: ${DB_MYSQL_USER}
       MYSQL_PASSWORD: ${DB_MYSQL_PASSWORD}
     volumes:
-      - mysql:/var/lib/mysql
+      - oracledb:/opt/oracle/oradata
+    ports:
+      -  ${DB_ORACLE_PORT}:1521
+      -  ${DB_MANAGE_PORT}:5500
     restart: always
 
 networks:
   default:
-      name: ${APP_NAME}
+      name: ${APP_NETWORK}
 
 volumes:
   oracledb:
