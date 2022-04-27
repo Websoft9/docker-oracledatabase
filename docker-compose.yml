@@ -8,10 +8,8 @@ services:
     image: container-registry.oracle.com/database/express:${DB_ORACLE_VERSION}
     container_name: ${APP_CONTAINER_NAME}  
     environment:
-      MYSQL_ROOT_PASSWORD: ${DB_MYSQL_PASSWORD}
-      MYSQL_DATABASE: ${DB_MYSQL_NAME}
-      MYSQL_USER: ${DB_MYSQL_USER}
-      MYSQL_PASSWORD: ${DB_MYSQL_PASSWORD}
+      ORACLE_CHARACTERSET: ${DB_CHARACTERSET}
+      ORACLE_PWD: ${DB_ORACLE_PASSWORD}
     volumes:
       - oracledb:/opt/oracle/oradata
     ports:
