@@ -1,13 +1,11 @@
-# image: https://hub.docker.com/r/bitnami/suitecrm
-# docs: https://github.com/bitnami/bitnami-docker-suitecrm
+# image: https://container-registry.oracle.com/ords/f?p=113:10::::::
 
 version: '3.8'
 
 services:
   oracledb:
-    image: mysql:${DB_MYSQL_VERSION}
-    container_name: ${APP_NAME}-mysql
-    command: --default-authentication-plugin=mysql_native_password    
+    image: container-registry.oracle.com/database/express:${DB_ORACLE_VERSION}
+    container_name: ${APP_CONTAINER_NAME}  
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_MYSQL_PASSWORD}
       MYSQL_DATABASE: ${DB_MYSQL_NAME}
