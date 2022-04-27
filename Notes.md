@@ -2,7 +2,7 @@
 
 ### db and ords images: https://container-registry.oracle.com/
 
-### Can your access em by public ip?
+### Can your login in em by remote?
 
 ```
 [root@VM-0-11-centos docker-oracledatabase]# docker exec -it oracledb sqlplus / as sysdba
