@@ -2,6 +2,14 @@
 
 ### db and ords images: https://container-registry.oracle.com/
 
+### Oracle Enterprise Manager
+
+5500 port
+
+### Oracle SQL developer
+
+https://docs.oracle.com/en/database/oracle/sql-developer-web/22.1/sdweb/accessing-sql-developer-web.html
+
 ### Can your login in em by remote?
 
 ```
