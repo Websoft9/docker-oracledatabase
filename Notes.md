@@ -82,4 +82,12 @@ User created.
 SQL> 
 ```
 
+### Oracle 用户信息保存在哪里
+
+保存在sys下的user$表里面
+```
+select * from sys.user$;
+```
+![image](https://user-images.githubusercontent.com/43192516/167233114-29da9925-4014-48db-bb7d-204cb399dad4.png)
+
 
