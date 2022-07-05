@@ -97,13 +97,12 @@ sudo docker compose up -d
 
 | 用户名    | 密码 |
 | ------- | -------- |
-|  admin | 123456  |
+|  sys | UGz0IARz117ssO%  |
 
 #### 服务和端口
 
 | 名称 | 端口号 | 用途 |  必要性 |
 | --- | --- | --- | --- |
-| onlyoffice-server | 9002 | 浏览器访问 ONLYOFFICE | Y |
 | EM | 5500 | 数据库可视化管理工具 | Y |
 ## 文档
 
