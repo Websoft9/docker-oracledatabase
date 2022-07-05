@@ -60,6 +60,9 @@ curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
 sudo systemctl enable docker
 sudo systemctl start docker
 alias docker-compose='docker compose'
+echo "alias docker-compose='docker compose'" >> /etc/profile.d/docker-compose.sh
+source /etc/profile.d/docker-compose.sh
+docker network create websoft9
 ```
 
 #### 安装 Oracle Database
@@ -69,7 +72,8 @@ alias docker-compose='docker compose'
 ```
 git clone --depth=1 https://github.com/Websoft9/docker-oracledatabase
 cd docker-oracledatabase
-sudo docker-compose up -d
+sudo docker network create websoft9 
+sudo docker compose up -d
 ```
 
 ### 常见问题
