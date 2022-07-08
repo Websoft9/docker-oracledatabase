@@ -4,23 +4,45 @@
 version: '3.8'
 
 services:
-  oracledb:
-    image: container-registry.oracle.com/database/${DB_ORACLE_EDITION}:${DB_ORACLE_VERSION}
-    container_name: ${APP_NAME}-db  
+  oraclexe:
+    image: container-registry.oracle.com/database/${APP_EDITION}:${APP_VERSION}
+    container_name: ${APP_NAME}  
     environment:
-      ORACLE_CHARACTERSET: ${DB_CHARACTERSET}
-      ORACLE_PWD: ${DB_ORACLE_PASSWORD}
-      ORACLE_SID: ${DB_ORACLE_SID}
-      ORACLE_PDB: ${DB_ORACLE_PDB}
-      INIT_SGA_SIZE: ${DB_ORACLE_SGA}
-      INIT_PGA_SIZE: ${DB_ORACLE_PGA}
-      ENABLE_ARCHIVELOG: true
+      - ORACLE_PWD
+      - ORACLE_CHARACTERSET
     volumes:
-      - oracledb:/opt/oracle/oradata
+      - data:/opt/oracle/oradata
+      - startup:/opt/oracle/scripts/startup
+      - setup:/opt/oracle/scripts/setup 
     ports:
-      -  ${DB_ORACLE_PORT}:1521
-      -  ${DB_MANAGE_PORT}:5500
+      -  ${APP_ORACLE_PORT}:1521
+      -  ${APP_PORT}:5500
     restart: always
+
+  oracle:
+    image: container-registry.oracle.com/database/${APP_EDITION}:${APP_VERSION}
+    container_name: ${APP_NAME}  
+    environment:
+      - ORACLE_SID
+      - ORACLE_PDB
+      - ORACLE_PWD
+      - INIT_SGA_SIZE
+      - INIT_PGA_SIZE
+      - ORACLE_EDITION
+      - ORACLE_CHARACTERSET
+      - ENABLE_ARCHIVELOG
+    volumes:
+      - data:/opt/oracle/oradata
+      - startup:/opt/oracle/scripts/startup
+      - setup:/opt/oracle/scripts/setup 
+    ports:
+      -  ${APP_ORACLE_PORT}:1521
+      -  ${APP_PORT}:5500
+    restart: always
+    profiles:
+      - enterprise
+      - standard
+
 
 networks:
   default:
@@ -28,4 +50,6 @@ networks:
     external: true
 
 volumes:
-  oracledb:
+  data:
+  startup:
+  setup:

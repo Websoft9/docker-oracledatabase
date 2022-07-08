@@ -1,38 +1,29 @@
-# Oracle Database XE
+# Oracle Database
 
-### db and ords images: https://container-registry.oracle.com/
+This repo is based from [Oracle docker](https://container-registry.oracle.com)
 
-### Oracle Enterprise Manager
+## Edition
 
-5500 port
+Express and Enterprise have different environments, 
 
-### Oracle SQL developer
+## FAQ
 
-https://docs.oracle.com/en/database/oracle/sql-developer-web/22.1/sdweb/accessing-sql-developer-web.html
+#### Express 版本是否可以设置 SID？
 
-### Can your login in em by remote?
+官方文档中没有这个环境变量，但设置下面的值没有问题
 
 ```
-[root@VM-0-11-centos docker-oracledatabase]# docker exec -it oracledb sqlplus / as sysdba
-
-SQL*Plus: Release 21.0.0.0.0 - Production on Wed Apr 27 01:38:44 2022
-Version 21.3.0.0.0
-
-Copyright (c) 1982, 2021, Oracle.  All rights reserved.
-
-
-Connected to:
-Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
-Version 21.3.0.0.0
-
-SQL> EXEC DBMS_XDB.SETLISTENERLOCALACCESS(FALSE);
-
-PL/SQL procedure successfully completed.
-
-SQL> 
+DB_ORACLE_SID=xe
+DB_ORACLE_PDB=xepdb1
 ```
 
-### What is cdb, pdb?
+而设置成下面的值会导致数据库无法启动
+```
+ORACLE_SID=ORCLCDB
+ORACLE_PDB=ORCLPDB1
+```
+
+#### What is cdb, pdb?
 
 ![image](https://user-images.githubusercontent.com/43192516/165426190-d895ea76-1b7e-4630-b420-c2adaec98a20.png)
 
