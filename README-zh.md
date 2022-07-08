@@ -87,7 +87,7 @@ sudo docker compose up -d
 
 ### 使用说明
 
-启动应用后，本地浏览器访问EM URL: *`https://服务器公网IP:端口/em`* 进入应用。  
+启动应用后，本地浏览器访问 URL: *`http://服务器公网IP:端口`* 进入应用。  
 
 下面是使用过程中可能需要的信息
 
@@ -97,12 +97,13 @@ sudo docker compose up -d
 
 | 用户名    | 密码 |
 | ------- | -------- |
-|  sys | UGz0IARz117ssO%  |
+|  admin | 123456  |
 
 #### 服务和端口
 
 | 名称 | 端口号 | 用途 |  必要性 |
 | --- | --- | --- | --- |
+| onlyoffice-server | 9002 | 浏览器访问 ONLYOFFICE | Y |
 | EM | 5500 | 数据库可视化管理工具 | Y |
 ## 文档
 
