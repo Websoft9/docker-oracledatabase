@@ -1,5 +1,5 @@
 {
-  "name": "Oracle",
+  "name": "oracle",
   "trademark": "Oracle Database",
   "installpath": "/data/apps/oracle",
   "compose_file": "docker-compose.yml",
