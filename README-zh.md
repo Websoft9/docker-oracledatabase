@@ -29,7 +29,7 @@
 登录 Linux，运行下面的**自动化命令**即可启动安装并显示安装结果。  
 
 ```
-sudo wget -N https://raw.githubusercontent.com/Websoft9/StackHub/main/docker-installer.sh; sudo bash docker-installer.sh -r Oracle
+sudo wget -N https://raw.githubusercontent.com/Websoft9/StackHub/main/docker-installer.sh; sudo bash docker-installer.sh -r oracle
 
 ```
 
@@ -38,13 +38,13 @@ sudo wget -N https://raw.githubusercontent.com/Websoft9/StackHub/main/docker-ins
 1.生成package包
 登录 Linux，运行下面的**自动化命令**即可生成所需的package包。
 ```
-sudo wget -N https://raw.githubusercontent.com/Websoft9/StackHub/main/docker-installer.sh; sudo bash docker-installer.sh -r Oracle -p
+sudo wget -N https://raw.githubusercontent.com/Websoft9/StackHub/main/docker-installer.sh; sudo bash docker-installer.sh -r oracle -p
 ```
 2.复制package包后安装
 
 将压缩的package包复制到想要安装的服务器或虚拟机，登录 Linux，运行下面的**自动化命令**即可启动安装并显示安装结果。
 ```
-sudo bash install-Oracle
+sudo bash install-oracle
 ```
 
 ### 手动安装
@@ -69,8 +69,8 @@ source /etc/profile.d/docker-compose.sh
 直接运行下面的命令快速安装应用。如果你熟悉 Docker，建议先修改 [docker-compose](docker-compose.yml) 文件以满足自己的需求
 
 ```
-git clone --depth=1 https://github.com/Websoft9/docker-Oracle
-cd docker-Oracle
+git clone --depth=1 https://github.com/Websoft9/docker-oracle
+cd docker-oracle
 sudo docker network create websoft9 
 sudo docker compose up -d
 ```
@@ -93,11 +93,11 @@ sudo docker compose up -d
 
 ## 文档
 
-[Oracle Database 管理员手册](https://support.websoft9.com/docs/Oracle)
+[Oracle Database 管理员手册](https://support.websoft9.com/docs/oracle)
 
 ## 企业级支持
 
-如果需要企业级支持，请订阅我们提供的 [Oracle Database 企业级支持版](https://apps.websoft9.com/Oracle) 
+如果需要企业级支持，请订阅我们提供的 [Oracle Database 企业级支持版](https://apps.websoft9.com/oracle) 
 
 订阅企业级产品后，您可获得：
 
