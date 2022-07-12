@@ -4,8 +4,8 @@
 version: '3.8'
 
 services:
-  oraclexe:
-    image: container-registry.oracle.com/database/${APP_EDITION}:${APP_VERSION}
+  oracle:
+    image: container-registry.oracle.com/database/express:${APP_VERSION}
     container_name: ${APP_NAME}  
     environment:
       - ORACLE_PWD
@@ -18,9 +18,11 @@ services:
       -  ${APP_ORACLE_PORT}:1521
       -  ${APP_PORT}:5500
     restart: always
+    profiles:
+      - express
 
   oracle:
-    image: container-registry.oracle.com/database/${APP_EDITION}:${APP_VERSION}
+    image: container-registry.oracle.com/database/enterprise:${APP_VERSION}
     container_name: ${APP_NAME}  
     environment:
       - ORACLE_SID
