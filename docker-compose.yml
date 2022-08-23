@@ -16,7 +16,7 @@ services:
       - setup:/opt/oracle/scripts/setup 
     ports:
       -  ${APP_ORACLE_PORT}:1521
-      -  ${APP_PORT}:5500
+      -  ${APP_HTTP_PORT}:5500
     restart: always
     profiles:
       - express
